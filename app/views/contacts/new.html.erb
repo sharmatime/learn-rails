@@ -1,0 +1,11 @@
+<% content_for :title do %>Contact<% end %> <!-- Use content_for view helper to pass title to application layout default -->
+<h3>Contact</h3> <!-- An h3 header in HTML -->
+<div class= "form"> <!-- Create a div element, styled with a predefined Zurb Foundation CSS class -->
+	<%= simple_form_for @contact do |form| %> <!-- Use the simple_form_for view helper, pass it an instance of @contact object -->
+		<%= form.error_notification %> <!-- A SimpleForm method that provides error messages to user on web page -->
+		<%= form.input :name, autofocus: true %> <!-- SimpleForm method that creates a name field -->
+		<%= form.input :email %> <!-- SimpleForm method that creates a email field -->
+		<%= form.input :content, as: :text %> <!-- SimpleForm method that creates a content field -->
+		<%= form.button :submit, 'Submit', class: 'submit' %> <!-- SimpleForm method that creates a submit button with  zurb styling -->
+	<% end %>
+</div>
