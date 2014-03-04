@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
 	def create #This method is executed by the controller when form data is submitted, broswer requests this URL as destination
 		@contact = Contact.new(secure_params) #create a new instance of the model but this pass it the attriburtes from params hash
 		if @contact.valid?
-			#TODO save data
+			@contact.update_spreadsheet
 			#TODO send message
 			flash[:notice] = "Message sent from #{@contact.name}"
 			redirect_to root_path
