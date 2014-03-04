@@ -1,4 +1,21 @@
-<h3>Home</h3>
-<p>Welcome to the home of <%= @owner.name %>.</p>
-<p>I was born on </p><%= @owner.birthdate %>
-<p>Only <%= @owner.countdown %> days away until my birthday! </p>
+<% content_for :title do %> Adrian Sharma<% end %> <!-- content_for view helpers that pass the title to application layout -->
+<% content_for :description do %> Website of Adrian Sharma <% end %>
+<section>
+	<%= image_tag "irish_andy_dragonboat_3_copy.jpg" %>
+</section>
+<section> <!-- The section and class column tags apply a grid from foundation to create a row with two columns -->
+	<div class="column"> <!-- column 1 contains the marketing message -->
+		<h2>Stay in touch.</h2>
+	</div>
+	<div class="column"> <!-- column 2 contains visitor email submission SimpleForm w/ ActiveRecord Validation -->
+		<div class="form-centered"> <!-- div class in column 2 to center --> 
+			<%= simple_form_for @visitor do |f| %>
+				<%= f.error_notification %> <!-- simple form error notification from ActiveRecord interface -->
+				<%= f.input :email, label: false, :placeholder => 'Your email address...' %>
+				<!-- Supress display of email field label with the flag label: false, use :placeholder to create a hint in the empty field -->
+				<br/>
+				<%= f.button :submit, "Sign up for the newsletter", :class => "submit" %> <!-- class submit is a CSS style not ZF --> 
+			<% end %>
+		</div>
+	</div>
+</section>
