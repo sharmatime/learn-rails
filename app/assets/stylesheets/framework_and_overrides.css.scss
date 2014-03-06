@@ -21,6 +21,7 @@
   @extend .columns;
   @extend .text-center;
   }
+
 // create your own classes
 // to make views framework-neutral
 .column {
@@ -36,6 +37,16 @@
   @extend .button;
   @extend .radius;
   }
+
+.labelrow {
+  position: absolute;
+  left: 30%;
+  top: 5%;
+}
+.row.full-width {
+  width: 100%;
+  max-width: 100%;
+}
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
@@ -46,3 +57,19 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+big_section {
+  @extend .row;
+  }  
+.about_text {
+  color: #FFFFFF;
+  background-color: rgba(125,125,125,0.6);
+  text-align: left;
+  font-weight: bold;
+  }
+#b1 {
+  color: #4C0066;
+}
+#welcome {
+  text-align: left;
+}
+

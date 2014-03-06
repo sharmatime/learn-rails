@@ -7,8 +7,8 @@ class ContactsController < ApplicationController
 	def create #This method is executed by the controller when form data is submitted, broswer requests this URL as destination
 		@contact = Contact.new(secure_params) #create a new instance of the model but this pass it the attriburtes from params hash
 		if @contact.valid?
-			@contact.update_spreadsheet
-			UserMailer.contact_email(@contact).deliver
+			@contact.update_spreadsheet #save data to a spreadsheet using google_drive gem
+			UserMailer.contact_email(@contact).deliver #Send email to website user, using Rails ActiveMailer
 			flash[:notice] = "Message sent from #{@contact.name}"
 			redirect_to root_path
 		else

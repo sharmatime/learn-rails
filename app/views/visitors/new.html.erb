@@ -1,11 +1,12 @@
-<% content_for :title do %> Adrian Sharma<% end %> <!-- content_for view helpers that pass the title to application layout -->
-<% content_for :description do %> Website of Adrian Sharma <% end %>
-<section>
-	<%= image_tag "irish_andy_dragonboat_3_copy.jpg" %>
+<% content_for :title do %> Lily Ting blog<% end %> <!-- content_for view helpers that pass the title to application layout -->
+<% content_for :description do %> fitness blog <% end %>
+<h1>Lily Ting's fitness blog</h1>
+<section class="column">
+	<%= image_tag "irish_andy_lily_ting.jpg" %>
 </section>
 <section> <!-- The section and class column tags apply a grid from foundation to create a row with two columns -->
 	<div class="column"> <!-- column 1 contains the marketing message -->
-		<h2>Stay in touch.</h2>
+		<h2 id="welcome">I try new fitness studios and write about them. Sign up to recieve my blog posts by email!</h2>
 	</div>
 	<div class="column"> <!-- column 2 contains visitor email submission SimpleForm w/ ActiveRecord Validation -->
 		<div class="form-centered"> <!-- div class in column 2 to center --> 
@@ -14,7 +15,7 @@
 				<%= f.input :email, label: false, :placeholder => 'Your email address...' %>
 				<!-- Supress display of email field label with the flag label: false, use :placeholder to create a hint in the empty field -->
 				<br/>
-				<%= f.button :submit, "Sign up for the newsletter", :class => "submit" %> <!-- class submit is a CSS style not ZF --> 
+				<%= f.button :submit, "Sign up!", :class => "submit" %> <!-- class submit is a CSS style not ZF --> 
 			<% end %>
 		</div>
 	</div>
